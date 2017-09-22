@@ -1,0 +1,859 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WHLClasses
+</name>
+</assembly>
+<members>
+<member name="T:WHLClasses.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Close">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Close_White">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.FragileAsset">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.LinnUser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Maximise">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Minimise">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.NewItem_Exploerr">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Nouser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.Partyloader">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.PPI_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.PPI_48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.prepacklabel">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WHLClasses.My.Resources.Resources.UnMaximise">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:WHLClasses.NetCom.GenericServer">
+ <summary>
+ LADIES AND GENTLEMEN
+ 
+ YOU ARE LOOKING
+ 
+ AT THE WORST CLIENT/SERVER INTERACTION
+ 
+ IN THE WORLD!!!!!
+ 
+         - Kanye West. Probably.
+
+ </summary>
+</member>
+<member name="F:WHLClasses.NetCom.NetPacket.Data">
+ <summary>
+ The objecttype in this object must be serializable.
+ </summary>
+</member>
+<member name="T:WHLClasses.NetCom.NetObjects.PicklistLoadData">
+ <summary>
+ Contains data for the client tablets to load a set of picklists.
+ </summary>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.BorderWidth">
+ <summary>
+ The thickness of the stroke of the border. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.Title">
+ <summary>
+ The text which appears at the edge of the control.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.HighlightOnFocus">
+ <summary>
+ A flag which states whether the control will highlight when a child control is focussed.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.HighlightNotBorderColor">
+ <summary>
+ The color of the border of the panel.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.HighlightBorderColor">
+ <summary>
+ The color of the border of the panel when the panel is highlighted. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.HighlightBackgroundColor">
+ <summary>
+ The background color of the panel when the panel is highlighted. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Controls.BPanel.HighlightNotBackgroundColor">
+ <summary>
+ The background color of the panel. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:WHLClasses.NewRota.RotaAttendance">
+ <summary>
+ Rota attendance object. Contains things about what time they clocked in/out/ used card or whatever
+ </summary>
+</member>
+<member name="T:WHLClasses.NewRota.RotaEntry">
+ <summary>
+ RotaEntry Class. Contains properties about a rota which can be used 
+ </summary>
+</member>
+<member name="T:WHLClasses.NewRota.Rotashift">
+ <summary>
+ States which the rota can be in. Only In/Out/Holiday really. 
+ </summary>
+</member>
+<member name="F:WHLClasses.NewRota.Rotashift.isFixed">
+ <summary>
+ If this is true, do not allow the shift to be changed. This is only true on Mandatory bank holdays at the time of wrting '04/05/2016     
+ </summary>
+</member>
+<member name="T:WHLClasses.NewRota.Shifts">
+ <summary>
+ Collection of shifts. You'll need this if you want to display the rota, or let the user do a thing. 
+ </summary>
+</member>
+<member name="M:WHLClasses.Reporting.ErrorReporting.ReportMinor(System.String,System.String)">
+ <summary>
+ This is primarily for specific error reporting when we need to find the reason for something or details as to why things are happening.
+ Basically, use this if we want something more than "an exception of kind X happened in function Y" because that can be pretty useless.
+ </summary>
+ <param name="Report"> Basic summary of the issue goes here. </param>
+ <param name="Details"> Details of the issue, we want a string containing parameter info. </param>
+</member>
+<member name="M:WHLClasses.Fees.FeeManager.GetPostagePrice(System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Gets the postage price form whldata.postagecosts for items based on the supplied data. 
+ </summary>
+ <param name="Weight">The weight in grams of the pack. </param>
+ <param name="Packet">True if the item is being posted as packet, false if as large letter. </param>
+ <param name="Courier">True if courier is to be used, false if not. </param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Fees.FeeManager.GetLabourPrice(System.String)">
+ <summary>
+ Gets the price for the given labour code. 
+ </summary>
+ <param name="LabourCode">The labour code. Should have been a selection in a dropdown where applicable. </param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Fees.FeeManager.GetEnvelopePrice(WHLClasses.Envelope)">
+ <summary>
+ Gets the price of the envelope, adjusted to include the price of 
+ </summary>
+ <param name="Envelope"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Fees.FeeManager.GetVATCost(System.Single)">
+ <summary>
+ Get the VAT charged on the item. 
+ </summary>
+ <param name="RetailPrice"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Fees.FeeManager.GetListingFees(System.Single)">
+ <summary>
+ Get the ebay lsiting fees (including discounts, paypal surcharges etc) associated with the product
+ </summary>
+ <param name="RetailPrice"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.GenericDataController.SaveDataToFile(System.String,System.Object,System.Boolean)">
+ <summary>
+ Serializes an object and saves to the specified file.
+ </summary>
+ <param name="Filename">File path of file to save</param>
+ <param name="ObjectToSave">Data to save</param>
+ <param name="dialog">If you want a dialog</param>
+</member>
+<member name="M:WHLClasses.GenericDataController.SaveDataToFile(System.String,System.Object,System.String,System.Boolean)">
+ <summary>
+ Serializes an object and saves to the specified file.
+ </summary>
+ <param name="Filename">File path of file to save</param>
+ <param name="ObjectToSave">Data to save</param>
+ <param name="dialog">If you want a dialog</param>
+</member>
+<member name="M:WHLClasses.GenericDataController.LoadOrdlst(System.String,System.Boolean,System.Boolean)">
+ <summary>
+ If you're using this, chances are it's in Processed Order Viewer. This has been personalised to deal with its initial loading loop. All are optional, change as needed.
+ </summary>
+ <param name="Filepath"> You shouldn't need to change this unless the order list is placed elsewhere.</param>
+ <param name="ShowStatusDialog"> This is true by default. Basically, it shows the loading progress.</param>
+ <param name="NoCatch"> True by default, because if it fails, we don't want it to crash.</param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.GenericDataController.LoadTrayAsync(System.String)">
+ <summary>
+ async Method for loading tray files
+ </summary>
+ <param name="Filepath"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.GenericDataController.LoadOrdexAsync(System.String)">
+ <summary>
+ async Method for loading Ordexs
+ </summary>
+ <param name="Filepath"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Misc.OperationDialog(System.String,System.ComponentModel.DoWorkEventHandler,System.Object,System.Boolean)">
+ <summary>
+ Throws up a dialog with a marquee progress bar and some text to signfy a long running operation, and runs it on a different thread.
+ </summary>
+ <param name="DialogText">The text you want the dialog to say.</param>
+ <param name="DialogFunction">The AddressOf the function you want to run. The method must be compatible with the DoWork event handler of BackgroundWorkers.</param>
+ <param name="Param">An argument which can be passed to the threaded task.</param>
+</member>
+<member name="T:WHLClasses.Hardware.WakeOnLan">
+ <summary>
+ Provides methods and otehr bits for waking PCs over the network.
+ </summary>
+</member>
+<member name="M:WHLClasses.Hardware.WakeOnLan.generatePacket(System.String,System.Byte[]@)">
+ <summary>
+ I have no fucking idea how this works. It's literally magic.
+ </summary>
+ <param name="MAC">A mac address. </param>
+ <param name="packet">A packet (or rather, a reference to one)</param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Hardware.WakeOnLan.GetWOLClients(System.String)">
+ <summary>
+ Query the database for WOL clients, optionally searchable by the recorded hostname. Return
+ </summary>
+ <param name="NameSearch"></param>
+ <returns></returns>
+</member>
+<member name="F:WHLClasses.Linnworks.Orders.ExtendedOrder.NewOrder">
+ <summary>
+ Contains order data 
+ </summary>
+</member>
+<member name="M:WHLClasses.Linnworks.Orders.ExtendedOrder.AddTrayToList(System.String,System.String)">
+ <summary>
+ Tray tracking. Please add the relevant tray ID followed by the state PICKING, PICKED, PACKING or PACKED.
+ The state will automatically trim and set the string to uppercase letters for you.
+ This will hopefully help in finding the root of order disappearances from trays. Hopefully.
+ </summary>
+ <param name="TrayID"></param>
+ <param name="CurrentState"></param>
+</member>
+<member name="M:WHLClasses.Linnworks.Orders.ExtendedOrder.SetEmailDate">
+ <summary>
+ This will save the current time as the last emailed date.
+ </summary>
+</member>
+<member name="T:WHLClasses.Linnworks.Orders.NewOrderStructure">
+ <summary>
+ A new, better structure we can use instead of LinnOpenOrder which will ultimately let us remove LinnOpenOrder (or at least null it) and maybe even eventually drop linnworks.
+ </summary>
+</member>
+<member name="M:WHLClasses.Linnworks.Orders.NewOrderStructure.#ctor">
+ <summary>
+ Parameterless construtor for XML shit. Don not use
+ </summary>
+</member>
+<member name="M:WHLClasses.Linnworks.Orders.NewOrderStructure.#ctor(LinnworksAPI.OpenOrder,System.Collections.Generic.List{LinnworksAPI.OrderNote})">
+ <summary>
+ Creates a new order from Linnworks Order Data
+ </summary>
+ <param name="LinnData">A LinnworksAPI.OpenOrder as recieved from the API.</param>
+</member>
+<member name="F:WHLClasses.Linnworks.Orders.NewOrderStructure.fCustomer">
+ <summary>
+ Don't use this. Use the "Customer" property instead.
+ </summary>
+</member>
+<member name="F:WHLClasses.Linnworks.Orders.NewOrderStructure.fOrder">
+ <summary>
+ Don't use this. Use the "Order" property instead.
+ </summary>
+</member>
+<member name="F:WHLClasses.Linnworks.Orders.NewOrderStructure.fItems">
+ <summary>
+ Don't use this. Use the "Items" property instead.
+ </summary>
+</member>
+<member name="P:WHLClasses.Linnworks.Orders.NewOrderStructure.Customer">
+ <summary>
+ Returns Customer-related data in sensibly named fields
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Linnworks.Orders.NewOrderStructure.Order">
+ <summary>
+ Returns Order-related data in sensibly named fields
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Linnworks.Orders.NewOrderStructure.Items">
+ <summary>
+ Returns a list of item-related data in sensibly named fields
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.Linnworks.Orders.NOS_Customer.FormattedAddress">
+ <summary>
+ Nicely formats the address into a multiline string which only has lines which actually have data in them.
+ </summary>
+ <returns>The address in a string which could be up to 8 lines long.</returns>
+</member>
+<member name="T:WHLClasses.EnvelopeCollection">
+ <summary>
+ 06/01/2015 - EnvelopeCollection: A structure which acts as a list of envelope objects and also has some methods for handy enveloping.
+ </summary>
+</member>
+<member name="M:WHLClasses.MiscFunctions.Misc.PingServerTime(System.String,System.Int32)">
+ <summary>
+ Gets the time taken for a response from a server. Returns -1 tick if no response. Waits maximum of 100ms for a response.
+ </summary>
+ <param name="server">The host you want to ping</param>
+ <returns>Amount of time taken for a response. If there was no response, it returns -1 tick.</returns>
+</member>
+<member name="M:WHLClasses.MiscFunctions.Misc.LoadFileStreamToMemory(System.String)">
+ <summary>
+ This function loads the contents (as a bytestream) of a file to memory then returns the object which contains the stream. It laods the file with Read Access without locking and Closes it immediately.
+ </summary>
+ <param name="Filepath">The path of the file to load.</param>
+ <returns>A MemoryStream with the file contents contained within. </returns>
+</member>
+<member name="M:WHLClasses.MiscFunctions.Misc.LocationIdConversion(System.Int32)">
+ <summary>
+ Provides a function for converting a location ID into a ShelfName
+ </summary>
+ <param name="location">Location Id</param>
+ <returns>A string containing the shelf name of the location</returns>
+</member>
+<member name="M:WHLClasses.GraphicsExtentions.EnableBlur(System.Windows.Window)">
+ <summary>
+ Applys a blur underneath the window from the DWM compositor
+ </summary>
+ <param name="Form">the WPF window with a tranparent background you want it to apply to.</param>
+</member>
+<member name="M:WHLClasses.Notifications.Notification.CreateNotification(System.String,WHLClasses.Notifications.NotificationComponent[],System.Single,System.EventHandler{WHLClasses.Notifications.NotificationBase})">
+ <summary>
+ Creates a notification through the notification manager with the specified data.
+ </summary>
+ <param name="TitleText">The text to show at the top of the notification</param>
+ <param name="Content">A collection of things to show in the notification. Can be updated with the returned objects later on.</param>
+ <param name="Timeout">The time it takes, in seconds, for the notification to automatically disappear.</param>
+ <returns></returns>
+</member>
+<member name="T:WHLClasses.Notifications.NotificationBase">
+<summary>
+NotificationBase
+</summary>
+</member>
+<member name="M:WHLClasses.Notifications.NotificationBase.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WHLClasses.TextOnlyNotificationUI">
+<summary>
+TextOnlyNotificationUI
+</summary>
+</member>
+<member name="M:WHLClasses.TextOnlyNotificationUI.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.SortByNewLocations(WHLClasses.Orders.SortDirection)">
+ <summary>
+ Sorts the orders by the new locations used in the system - Specifically by the Location IDs.
+ </summary>
+ <param name="Direction">Specifies the direction which the orders are sorted in. Defaults to ascending, and you're probably never going to use the descending but the option is there if you need it.</param>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.SortByRoutes(WHLClasses.Orders.SortDirection)">
+ <summary>
+ Uses the new Routing data to sort orders (At the absence of having actual location data in the picklist, anyway.
+ </summary>
+ <param name="Direction"></param>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.GetOrdersByWarehouse(System.Int32,System.Boolean)">
+ <summary>
+ Gets orders where the items on the order are in the specified warehouse. Also allows you to filter out ones in another warehouse if you likr.
+ </summary>
+ <param name="WarehouseID">The warehouse ID you want to find orders for</param>
+ <param name="AllowSplits">Whethewr you want to get Split warehouse orders. Defaults to False.</param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.GetByOrderID(System.String)">
+ <summary>
+ Find a specific order's data 
+ </summary>
+ <param name="OrderID"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.GetSplits">
+ <summary>
+ Gets the splits from the current defeinition, which can then be used to find and print the Split Transfer List. TM
+ </summary>
+ <returns>A bunvh of orders which are splits.</returns>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.GetByPickType(WHLClasses.Orders.ItemPicklistType)">
+ <summary>
+ Filters orders and returns thouse which have the specified type of orders within.
+ </summary>
+ <param name="PickingType"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.GetByStatus(WHLClasses.Orders.OrderStatus)">
+ <summary>
+ Filters orders and returns only those matching the specified OrderStatus.
+ </summary>
+ <param name="Status"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.OrderDefinition.GetBoxedOrders(System.Boolean)">
+ <summary>
+ Filters orders and gets only those matching the specified state ofbox... requirement?
+ </summary>
+ <param name="NeedsBox"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.Tray.AllPacked">
+ <summary>
+ Function to check if all orders in a tray have been packed or posted
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.Tray.CheckIfAllState(WHLClasses.Orders.OrderStatus)">
+ <summary>
+ Function to check if all orders in a tray match the give OrderStatus
+ </summary>
+ <param name="status"></param>
+ <returns></returns>
+</member>
+<member name="F:WHLClasses.Orders.SplitOrderInfo.ParentOrderIndex">
+ <summary>
+ No longer used in RPW
+ </summary>
+</member>
+<member name="F:WHLClasses.Orders.SplitOrderInfo.ParentOrderItemIndex">
+ <summary>
+ No longer used in RPW
+ </summary>
+</member>
+<member name="F:WHLClasses.Orders.SplitOrderInfo.OrderQuantity">
+ <summary>
+ No longer used in RPW
+ </summary>
+</member>
+<member name="F:WHLClasses.Orders.SplitOrderInfo.ItemQuantity">
+ <summary>
+ in RPW, contains Order and item quants together
+ </summary>
+</member>
+<member name="M:WHLClasses.Orders.Methods.OrderFinancialsFromOrdex(WHLClasses.Linnworks.Orders.ExtendedOrder,WHLClasses.SkuCollection,System.Boolean,System.String,System.String)">
+ <summary>
+ Calculates order financials for an order via the provided Ordex.
+ </summary>
+ <param name="Ordex">The ordex provided.</param>
+ <param name="Skus">A sku collection with skus. Used to resolve data about items.</param>
+ <param name="save">Whether or not to save the new data to the database.</param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Orders.Methods.CalculateOrderFinancials(WHLClasses.Orders.OrderFinancialSource,System.Boolean)">
+ <summary>
+ Calculates financials for an order.
+ </summary>
+ <param name="Data">The order data in the special format it likes.</param>
+ <param name="Save"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Services.SurfacePicker.Fucnt.ConnectChannel(System.String,System.ServiceModel.Channels.Binding)">
+ <summary>
+ Creates the connection
+ </summary>
+ <param name="Address">The endpoint of the server to connect to.</param>
+ <param name="Binding">The binding to use. A NetTCPBinding will be useed (with max 2GB message size) if you don't specify anything,.</param>
+ <returns>The client interface, which has the functions you can use.</returns>
+</member>
+<member name="M:WHLClasses.Services.SurfacePicker.SPContract.SetTabletStatus(System.String,System.String,System.Windows.Media.Color,System.String,System.String)">
+ <summary>
+ Sets the status of a tablet on the screen. Adds it if it isn't already there.
+ </summary>
+ <param name="DeviceName">The hostname of the sevice</param>
+ <param name="Username">THe name as you want it to display</param>
+ <param name="Background">The background color, sans gradient/darkening</param>
+ <param name="Type">The type of list they're doing as it shows on the tag. The first character </param>
+ <param name="Status">The taxt which occupies the bottom of the control.</param>
+</member>
+<member name="M:WHLClasses.Services.SurfacePicker.SPContract.RemoveTablet(System.String)">
+ <summary>
+ Removes a tablet from the screen.
+ </summary>
+ <param name="DeviceName"></param>
+</member>
+<member name="M:WHLClasses.Services.SurfacePicker.SPContract.Ping">
+ <summary>
+ Returns true.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Services.SurfacePicker.SPContract.InformItem(WHLClasses.WhlSKU,System.String,WHLClasses.Employee)">
+ <summary>
+ Informs the supervisor about an issue with an item.
+ </summary>
+ <param name="Item"></param>
+ <param name="Issue"></param>
+</member>
+<member name="M:WHLClasses.Services.Sku_Generator.Fucnt.ConnectChannel(System.String,System.ServiceModel.Channels.Binding)">
+ <summary>
+ Creates the connection
+ </summary>
+ <param name="Address">The endpoint of the server to connect to.</param>
+ <param name="Binding">The binding to use. A NetTCPBinding will be useed (with max 2GB message size) if you don't specify anything,.</param>
+ <returns>The client interface, which has the functions you can use.</returns>
+</member>
+<member name="M:WHLClasses.Services.Sku_Generator.SGContract.GetCollection">
+ <summary>
+ Retirieves the SkuCollection from the server. 
+ </summary>
+ <returns>A fat lump of SkuCollection</returns>
+</member>
+<member name="M:WHLClasses.Services.Sku_Generator.SGContract.PollUpdate">
+ <summary>
+ I'll do this one soon.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Services.OrderServer.Fucnt.ConnectChannel(System.String,System.ServiceModel.Channels.Binding)">
+ <summary>
+ Creates the connection
+ </summary>
+ <param name="Address">The endpoint of the server to connect to.</param>
+ <param name="Binding">The binding to use. A NetTCPBinding will be useed (with max 2GB message size) if you don't specify anything,.</param>
+ <returns>The client interface, which has the functions you can use.</returns>
+</member>
+<member name="M:WHLClasses.Services.OrderServer.OSContract.StreamOrderDefinition">
+ <summary>
+ Hey it actually works™. Gets the Orddef live from the Order Server. Well fast.
+ </summary>
+ <returns>The full orddef LIVE ON CHANNEL FOUR PLEASE DO NOT SWEAR</returns>
+</member>
+<member name="M:WHLClasses.Services.OrderServer.OSContract.StreamIOOrderDefinition">
+ <summary>
+ Hey it actually works™. Gets the IO Orddef live from the Order Server. Well fast. Great for prepacks.
+ </summary>
+ <returns>The full orddef LIVE ON CHANNEL FOUR PLEASE DO NOT SWEAR</returns>
+</member>
+<member name="M:WHLClasses.Services.OrderServer.OSContract.GetOrdersCount(WHLClasses.Orders.OrderStatus)">
+ <summary>
+ Just gets the amount of orders. Optionally lets you say what state you want aforementioned orders to be in.
+ </summary>
+ <param name="OrderState"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Services.OrderServer.OSContract.TwoGig">
+ <summary>
+ Downloads 2 gig of data. Ish. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.Services.SvcHost`2.#ctor(System.String,System.String,System.ServiceModel.Channels.Binding)">
+ <summary>
+ Starts a service host with the specified things.
+ </summary>
+ <param name="nServiceAddress">The address of the service</param>
+ <param name="nEndpointAddress">The services' enpoint.</param>
+ <param name="nBinding">The binding to be used.</param>
+</member>
+<member name="M:WHLClasses.Services.SvcHost`2.StopService">
+ <summary>
+ Tries to stop the service.
+ </summary>
+</member>
+<member name="M:WHLClasses.Changelog.CreateChangelog(System.Deployment.Application.ApplicationDeployment,System.Boolean,System.String)">
+ <summary>
+ Invokes a changelog for the user. If called with force = true, it will always show. If called with force=false (default), it will only show if it's a new version.
+ </summary>
+ <param name="Deployment">The "My.application.deployment" from the application.</param>
+ <param name="Title">The title of the changelog window.</param>
+ <param name="Force">Whether to force it or not.</param>
+</member>
+<member name="M:WHLClasses.Totals.GetDailyTotals(System.DateTime)">
+ <summary>
+ 
+ </summary>
+ <param name="RequestedDate">The date you want data for. </param>
+ <returns>Returns a DailyTotalObject containing more useful data. </returns>
+</member>
+<member name="T:WHLClasses.SQL.MySQL_New">
+ <summary>
+ A group of functions which encapsulate the new MySQL functions. Powered by dictionaries and shit. 
+ </summary>
+</member>
+<member name="M:WHLClasses.SQL.MySQL_New.GetData(System.String)">
+ <summary>
+ Returns data in accordance with the query you provide.
+ </summary>
+ <param name="Query">The query you have provided.</param>
+ <returns>Returns a list of dictionaries where the dictionary key is the column name, and the value is.... the value!</returns>
+</member>
+<member name="T:WHLClasses.SpeechFactory">
+ <summary>
+ The natural language speech factory. Brought to you probably by Hazel.
+ </summary>
+</member>
+<member name="F:WHLClasses.SpeechFactory._ScanMixedTag">
+ <summary>
+ Contains strings for "Scan the mixed tag you're using"
+ </summary>
+</member>
+<member name="T:WHLClasses.WarehouseAnalytics.AnalyticBase">
+ <summary>
+ Contains all of the analytics data used with SurfacePicker
+ </summary>
+</member>
+<member name="M:WHLClasses.SkuCollection.SearchLocationIDs(System.Int32)">
+ <summary>
+ Fast function which finds items which have the provided ID
+ </summary>
+ <param name="LocationID"></param>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.SkuCollection.StartWorker(System.Boolean)">
+ <summary>
+ Do not run this on the main thread. It is only public for testing purposes.
+ </summary>
+</member>
+<member name="M:WHLClasses.SkuCollection.AdvancedSearch(System.String,System.String,System.String,System.Boolean,System.String)">
+ <summary>
+ This funciton does some clever searching. It also probably takes a while because it does a lot of searches and comparisons. RIP IN PIECES CPU.
+ </summary>
+ <param name="Terms">The standard search terms. Enter a nothing value to return everything. </param>
+ <param name="Category">Limit the search to a category. Defaults to nothiong. </param>
+ <param name="PrimarySupplierName">Limit the search to a supplier. Defaults to nothing. </param>
+ <param name="MatchAll">Boolean value to make the results match all search terms. Defaults to True. </param>
+ <param name="Divider">Set the search term divider. Default is space. </param>
+ <returns>A collection of SKUs (in a skucollection) which meets the specified criteria. </returns>
+</member>
+<member name="M:WHLClasses.SkuCollection.FixOrder">
+ <summary>
+ Sorts out the weird ordering provided by racing threads.
+ </summary>
+</member>
+<member name="M:WHLClasses.SkuCollection.MakeMixdown">
+ <summary>
+ Mixes everything down so you only get one packsize per shortsku. Usually the smallest available, I.E. singles.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:WHLClasses.WhlSKU">
+ <summary>
+ GOOD LUCK WITH THIS ONE. Refertou your comprehensive guide to bad programming for more info on this one.
+ </summary>
+</member>
+<member name="M:WHLClasses.WhlSKU.SaveChanges(WHLClasses.Employee,System.String)">
+ <summary>
+ This function will save all properties to the database.
+ </summary>
+ <returns>Returns a list of strings which display the update status of each element of the product in a user fiendly way.</returns>
+</member>
+<member name="M:WHLClasses.WhlSKU.CheapestSupplier">
+ <summary>
+ Returns the cheapest supplier object attached to this product.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WHLClasses.WhlSKU.GetStock(System.Collections.Concurrent.ConcurrentBag{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+ <summary>
+ Gets the stock level from the database or provided precomp and applied it to the sku.
+ </summary>
+ <param name="Precomp_Stock">A precomp of the Stock table.</param>
+</member>
+<member name="M:WHLClasses.WhlSKU.Newbie(System.Collections.ArrayList,System.Boolean,System.Collections.Concurrent.ConcurrentBag{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Collections.Concurrent.ConcurrentBag{WHLClasses.SKUImage},System.Collections.Concurrent.ConcurrentBag{WHLClasses.SKUSupplier},System.Collections.Concurrent.ConcurrentBag{WHLClasses.SKULocation})">
+ <summary>
+ Create a WHLSku from a simple arraylist from the whlnew table.
+ </summary>
+ <param name="Data">The arraylist of values from a row.</param>
+ <param name="ThrowRefreshExeptions">Whether or not to throw special exceptions, like if there is nothing in the stock table etc. Default is false.</param>
+</member>
+<member name="M:WHLClasses.WhlSKU.AddLocationWithAudit(System.Int32,WHLClasses.Employee,System.Int32,System.String,System.Boolean,System.Boolean)">
+ <summary>
+ Adds an item to a new location
+ </summary>
+ <param name="LocationID"></param>
+ <param name="User"></param>
+ <param name="Amount"></param>
+</member>
+<member name="M:WHLClasses.WhlSKU.RemoveLocationWithAudit(System.Int32,WHLClasses.Employee,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Removes Stock from a location
+ </summary>
+ <param name="LocationID"></param>
+ <param name="User"></param>
+ <param name="Amount"></param>
+</member>
+<member name="M:WHLClasses.WhlSKU.AdjustStockWithAudit(System.Int32,WHLClasses.Employee,System.Int32,System.String,System.Boolean)">
+ <summary>
+ Adjusts the stock in a location by a specified amount,Used for Picking
+ </summary>
+ <param name="LocationID">The location</param>
+ <param name="User">User who made the change</param>
+ <param name="Amount">Amount the stock has changed by</param>
+ <param name="FromWHApp">Optional Param for Warehouse application use</param>
+</member>
+<member name="M:WHLClasses.WhlSKU.MoveLocationWithAudit(System.Int32,WHLClasses.Employee,System.Int32,System.Int32,System.String)">
+ <summary>
+ Used to move Items between Locations
+ </summary>
+ <param name="OldLocationID"></param>
+ <param name="User"></param>
+ <param name="Amount"></param>
+ <param name="NewLocationID"></param>
+ <param name="EventSource"></param>
+</member>
+<member name="F:WHLClasses.SKUSupplier.SuppBoxCode">
+ <summary>
+ This is not used.
+ </summary>
+</member>
+<member name="P:WHLClasses.SKUSupplier.CaseBarcodeInner">
+ <summary>
+ barcode which can be found on inners. For some reason this is occasionally different. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.BoxCode">
+ <summary>
+ The code which appears on the box. May not be the same as the reorder code for some suppliers. ### NOT USEED ###
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.LastModified">
+ <summary>
+ Weeks which are the "lead time"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.LeadTime">
+ <summary>
+ Weeks which are the "lead time"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.OutOfStock">
+ <summary>
+ The 3 character supplier code.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.Name">
+ <summary>
+ The 3 character supplier code.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.ReOrderCode">
+ <summary>
+ The re-order code for the supplier which identifies the product on the supplier's site. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.Price">
+ <summary>
+ The last recorded price that the item was ordered for.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.CaseBarcode">
+ <summary>
+ The barcode on the outer box. this is sometimes the same as the normal barcode. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.Barcode">
+ <summary>
+ The barcode on the product itself.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.Discontinued">
+ <summary>
+ This value is set to true of the product has been discontinued. 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:WHLClasses.SKUSupplier.Primary">
+ <summary>
+ This values states whether this supplier is the primary one or not.
+ </summary>
+ <returns></returns>
+</member>
+<member name="F:WHLClasses.SKUImage.ImageFileName">
+ <summary>
+ This is actually the database index
+ </summary>
+</member>
+</members>
+</doc>

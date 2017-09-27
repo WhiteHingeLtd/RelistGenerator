@@ -63,12 +63,12 @@ Public Class RelistMain
             Dim QueryText As String = "SELECT
     a.shortsku,
     d.ShelfName as 'Location',
-    c.Title,
+    a.labelshort,
     CONCAT('\'',b.SupplierCode) as 'SupplierCode',
     CAST(c.stock AS SIGNED) as 'Level',
     CAST(c.stockminimum AS SIGNED) as 'Min',
     (c.stock + c.stockminimum) as 'Total',
-    "" as 'Check'
+    '' as 'Check'
 FROM whldata.whlnew as a
 LEFT JOIN whldata.sku_supplierdata as b on a.shortsku=b.SKU
 LEFT JOIN whldata.inventory as c on a.sku=c.sku

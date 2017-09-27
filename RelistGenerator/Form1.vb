@@ -67,7 +67,8 @@ Public Class RelistMain
     CONCAT('\'',b.SupplierCode) as 'SupplierCode',
     CAST(c.stock AS SIGNED) as 'Level',
     CAST(c.stockminimum AS SIGNED) as 'Min',
-    (c.stock + c.stockminimum) as 'Total'
+    (c.stock + c.stockminimum) as 'Total',
+    "" as 'Check'
 FROM whldata.whlnew as a
 LEFT JOIN whldata.sku_supplierdata as b on a.shortsku=b.SKU
 LEFT JOIN whldata.inventory as c on a.sku=c.sku
@@ -84,7 +85,7 @@ LEFT JOIN
         qb.LocType=1 Group by qa.shortsku)
 	as d on a.shortsku=d.shortsku
 WHERE
-(CAST(c.stock AS SIGNED) < CAST(c.stockminimum AS SIGNED)) AND (CAST(c.stockminimum AS SIGNED) >= 3) AND (b.isPrimary = 'True') AND NOT (a.packsize > c.stockminimum) AND (a.islisted = 'True');"
+(CAST(c.stock AS SIGNED) < CAST(c.stockminimum AS SIGNED)) AND (CAST(c.stockminimum AS SIGNED) >= 3) AND (b.isPrimary = 'True') AND NOT (a.packsize > c.stockminimum);"
 
             'Get Info
             querydata.Clear()

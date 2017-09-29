@@ -38,7 +38,8 @@ Public Class RelistMain
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub CollectBTN_Click(sender As Object, e As EventArgs) Handles CollectBTN.Click
-
+        'Before we give them any messages, ensure we're using a neutral font style.
+        StatusLabel.ForeColor = SystemColors.ControlText
         'Check filename is valid
         If CSVNameTXT.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 Then
             'We have invalid characters
@@ -93,13 +94,16 @@ WHERE
             Catch ex As Exception
                 'I wanna know about it.
                 Reporting.ErrorReporting.ReportException(ex, False, False)
-                StatusLabel.Text = "An error in data retrieval has been reported to the developer."
+                StatusLabel.Text = "Data retrieval failed. The error has been reported to the developer."
+                'We cant do anything without data. Exit sub.
                 Exit Sub
             End Try
 
             If Not querydata.Count > 0 Then
                 'They need to know they got nothing rather than just... sitting around waiting for the table to fill when it isnt going to.
                 StatusLabel.Text = "No relist data was received. See technical support."
+                'Note however that it is possible to reach this if we have nothing with a stock count below its minimum. That's a good thing.
+                'We cant do anything without data. Exit sub.
                 Exit Sub
             Else
                 'Begin saving
@@ -108,6 +112,7 @@ WHERE
 
             'Visual effect; rather than continuing to say Please Wait...
             StatusLabel.Text = "Saved."
+            'Disable the red font.
             StatusLabel.ForeColor = SystemColors.ControlText
         End If
     End Sub

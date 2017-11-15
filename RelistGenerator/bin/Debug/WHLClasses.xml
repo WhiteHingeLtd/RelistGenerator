@@ -492,6 +492,20 @@ InitializeComponent
  <param name="status"></param>
  <returns></returns>
 </member>
+<member name="M:WHLClasses.Orders.Tray.TrayContainsAmountOfSku(System.String,System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="sku"></param>
+ <param name="Amount"></param>
+ <returns></returns>
+Todo Debugger
+</member>
+<member name="F:WHLClasses.Orders.PackableSku.ScannedProper">
+ <summary>
+ Actually the cheated flag. Set to True when the sku has to be typed on packing
+ </summary>
+</member>
 <member name="F:WHLClasses.Orders.SplitOrderInfo.ParentOrderIndex">
  <summary>
  No longer used in RPW
@@ -725,7 +739,7 @@ InitializeComponent
  </summary>
  <returns></returns>
 </member>
-<member name="M:WHLClasses.WhlSKU.GetStock(System.Collections.Concurrent.ConcurrentBag{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+<member name="M:WHLClasses.WhlSKU.GetStock(System.Collections.Concurrent.ConcurrentBag{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Boolean)">
  <summary>
  Gets the stock level from the database or provided precomp and applied it to the sku.
  </summary>

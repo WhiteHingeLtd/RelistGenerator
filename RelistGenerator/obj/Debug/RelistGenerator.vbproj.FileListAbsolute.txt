@@ -66,3 +66,5 @@ Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\obj\Debug\RelistGene
 Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.exe
 Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.xml
 Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.pdb
+Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\bin\Debug\WHLClasses.dll.config
+Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\bin\Debug\MySql.Data.xml

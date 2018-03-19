@@ -12,5 +12,6 @@ Namespace My
             WHLClasses.Reporting.ReportException(e.Exception)
             e.ExitApplication = False
         End Sub
+
     End Class
 End Namespace

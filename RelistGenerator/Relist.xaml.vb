@@ -1,26 +1,30 @@
 ﻿Imports WHLClasses
 Imports System.IO
+Imports System.Windows.Threading
+Imports System.Xaml
 
-Public Class RelistMain
+Public Class Relist
+
     ''' <summary>
     ''' Global query data storage
     ''' </summary>
     Dim querydata As New List(Of Dictionary(Of String, Object))
+    Dim ReadOnly FolderSelection As New FolderBrowserDialog()
 
     ''' <summary>
     ''' On Loading, we want to ensure we can gather info from the server, and check the V drive exists
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub RelistMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub RelistMain_Load(sender As Object, e As EventArgs) Handles MyBase.Loaded
         'Check Server is receiving requests.
         If My.Computer.Network.Ping("sql") Then
             'Good, we're working. Load the default folder from settings.
-            FolderLocTXT.Text = My.Settings.DefaultFolderLoc
+            FolderLocTxt.Text = My.Settings.DefaultFolderLoc
             'Now set the CSV Automatic Name
             CSVNameTXT.Text = "relist-" + Today.ToString("yyMMdd")
             'Check folder
-            If Not My.Computer.FileSystem.DirectoryExists(FolderLocTXT.Text) Then
+            If Not My.Computer.FileSystem.DirectoryExists(FolderLocTxt.Text) Then
                 'Well, we need a folder to save in.
                 StatusLabel.Text = "The folder being referenced doesn't exist or can't be reached. Please choose another folder."
             End If
@@ -30,7 +34,6 @@ Public Class RelistMain
             'May as well just not open at all. They can reopen it when they can connect to the server.
             Me.Close()
         End If
-        
     End Sub
 
     ''' <summary>
@@ -38,9 +41,9 @@ Public Class RelistMain
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub CollectBTN_Click(sender As Object, e As EventArgs) Handles CollectBTN.Click
+    Private Sub CollectBTN_Click(sender As Object, e As EventArgs) 
         'Before we give them any messages, ensure we're using a neutral font style.
-        StatusLabel.ForeColor = SystemColors.ControlText
+        StatusLabel.Foreground = System.Windows.Media.Brushes.Black
         'Check filename is valid
         If CSVNameTXT.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 Then
             'We have invalid characters
@@ -58,7 +61,7 @@ Public Class RelistMain
             'Ok, go!
             'Visual Effect; This will take a while, a signal is nice.
             StatusLabel.Text = "Please wait."
-            StatusLabel.ForeColor = Color.Maroon
+            StatusLabel.Foreground = System.Windows.Media.Brushes.Maroon
 
             'Query
             Dim QueryText As String = "SELECT
@@ -115,7 +118,7 @@ WHERE
             'Visual effect; rather than continuing to say Please Wait...
             StatusLabel.Text = "Saved."
             'Disable the red font.
-            StatusLabel.ForeColor = SystemColors.ControlText
+            StatusLabel.Foreground = System.Windows.Media.Brushes.Black
         End If
     End Sub
 
@@ -199,9 +202,9 @@ WHERE
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub FolderLocTXT_Click(sender As Object, e As EventArgs) Handles FolderLocTXT.Click
+    Private Sub FolderLocTXT_Click(sender As Object, e As EventArgs) Handles FolderLocTxt.MouseDown
         'Show the dialog, only act if they click the OK button
-        If FolderSelection.ShowDialog = DialogResult.OK Then
+        If FolderSelection.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             'Change text to reflect changes
             FolderLocTXT.Text = FolderSelection.SelectedPath
             'Errorproofing - it needs that slash at the end, or it'll save as Documentsrelist-yyMMdd in the folder above or something.
@@ -214,14 +217,136 @@ WHERE
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim future As New Relist()
-        future.Show()
+    Private Sub FolderLocTxt_MouseLeftButtonDown(sender As Object, e As System.Windows.Input.MouseButtonEventArgs) Handles FolderLocTxt.MouseLeftButtonDown
+        FolderLocTXT_Click(sender,e)
     End Sub
 
-    Private Sub RelistMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Me.Hide()
-        Dim Future As New Relist()
-        Future.Show()
+    Private Sub FolderLocTxt_GotFocus(sender As Object, e As System.Windows.RoutedEventArgs) Handles FolderLocTxt.GotFocus
+        FolderLocTXT_Click(sender,e)
     End Sub
+
+    Private Sub CollectBtn_Click_1(sender As Object, e As System.Windows.RoutedEventArgs) Handles CollectBtn.Click
+        CollectBTN_Click(sender,e)
+    End Sub
+
+    Private Sub Window_Closed(sender As Object, e As EventArgs)
+        System.Windows.Forms.Application.Exit()
+    End Sub
+
+    Dim disp As Dispatcher
+
+    Private Sub FindNegativeStockButton_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles FindNegativeStockButton.Click
+        'Disable some controls
+        CollectBtn.IsEnabled = False
+        FindNegativeStockButton.IsEnabled = False
+        'Grab the dispatcher
+        disp = Me.dispatcher
+        'Make the hread to execure the bois
+        Dim thred = New Threading.Thread(addressof FindNegBackThred)
+        'gogogo
+        thred.Start()
+    End Sub
+
+    Dim Saver As New SaveFileDialog()
+    Dim Applicables as List(Of WhlSKU)
+
+    Private sub FindNegBackThred()
+        'Load skus
+        disp.Invoke(Sub()
+            StockFinderProgresssBar.Value=0
+                        StockFinderProgresssBar.IsIndeterminate = True
+                        StockFinderProgressText.Text = "Loading Item Data..."
+                        StockFinderPercentage.Text = "0%"
+
+                    End Sub)
+        Dim skus = (New GenericDataController).SmartSkuCollLoad()
+        disp.Invoke(Sub()
+                        StockFinderProgresssBar.IsIndeterminate = True
+                        StockFinderProgressText.Text = "Mixing Skus..."
+                    End Sub)
+        dim mixer = skus.MakeMixdown
+        'Start findind items
+        disp.Invoke(Sub()
+            StockFinderProgresssBar.IsIndeterminate = False
+            StockFinderProgresssBar.Maximum = mixer.Count
+            StockFinderProgressText.Text = "Checking Items... {}"
+        End Sub)
+        Applicables = New List(Of WhlSKU)
+        Dim counter = 0
+        for each item in mixer
+            counter += 1
+            Threading.Thread.Sleep(1)
+            If (counter Mod 10) = 0 then
+                disp.BeginInvoke(Sub(Item2 As Whlsku, Counter2 As integer)
+                    StockFinderProgresssBar.Value = Counter2
+                    StockFinderPercentage.Text = $"{Math.Round((counter2/mixer.Count)*100)}%"
+                    StockFinderProgressText.Text = $"Checking {Item2.ShortSku} {Item2.Title.Label}"
+                End Sub,{item,counter})
+            End If
+            Try
+                Dim pick = item.GetLocation(SKULocation.SKULocationType.Pickable)
+                If Convert.ToInt32(pick.Additional) < 0 Then
+                    Applicables.Add(item)
+                End If
+            Catch ex As Exception
+
+            End Try
+        Next
+        disp.Invoke(Sub()
+            StockFinderProgresssBar.IsIndeterminate = true
+            StockFinderProgressText.Text = $"Preparing to save CSV ({Applicables.Count} items)..."
+            Saver.DefaultExt = ".csv"
+            Saver.Filter = "Comma seperated values document (*.csv)|*.csv"
+            Saver.FileName=$"NegativeStock-{Now.ToString("yyyy MMM d")}"
+            Saver.InitialDirectory = My.Settings.DefaultFolderLoc
+            if Saver.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                            'Start another new thread because the main one is kill.
+                StockFinderProgressText.Text = $"Preparing to save CSV ({Applicables.Count} items) at ""{Saver.FileName}""..."
+                Dim Thred = New Threading.Thread(addressof FindNegBackThredPart2)
+                'gogogo
+                Thred.Start(Saver.FileName)
+            End If
+        End Sub)
+    End Sub
+    Private sub FindNegBackThredPart2(Filename As string)
+        Dim CsvData as string="""Shortsku"", Location,""Label"",""Supplier Code"",""Stock"""
+        Dim counter = 0
+        for each item in Applicables
+            counter += 1
+            Threading.Thread.Sleep(1)
+            If (counter Mod 10) = 0 then
+                disp.BeginInvoke(Sub(Item2 As Whlsku, Counter2 As integer)
+                    StockFinderProgresssBar.Value = Counter2
+                    StockFinderPercentage.Text = $"{Math.Round((counter2/Applicables.Count)*100)}%"
+                    StockFinderProgressText.Text = $"Preparing to save CSV ({Item2.ShortSku} {Item2.Title.Label})"
+                End Sub,{item,counter})
+            End If
+            Try
+                Dim pick = item.GetLocation(SKULocation.SKULocationType.Pickable)
+                
+                Dim line = $"""{item.ShortSku}"", {pick.LocationText},""{item.Title.Label.Replace("""","``")}"",""{item.GetPrimarySupplier.ReOrderCode}"",""{pick.Additional}"""
+                CSVData += vbNewLine + line
+            Catch ex As Exception
+
+            End Try
+        Next
+        'Finished preparing the data to save, now save it
+        disp.BeginInvoke(Sub()
+            StockFinderProgresssBar.Value = StockFinderProgresssBar.Maximum
+            StockFinderProgresssBar.IsIndeterminate=True
+            StockFinderPercentage.Text = $"{100}%"
+            StockFinderProgressText.Text = $"Writing CSV..."
+        End Sub)
+        'Save the data.
+        My.Computer.FileSystem.WriteAllText(filename, CsvData, false)
+        disp.BeginInvoke(Sub()
+            StockFinderProgresssBar.Value = 0
+            StockFinderProgresssBar.IsIndeterminate = false
+            StockFinderPercentage.Text = $"{100}%"
+            StockFinderProgressText.Text = $"Task Complete."
+            'Open the CSV
+            Process.Start(filename)
+        End Sub)
+    End sub
+
 End Class

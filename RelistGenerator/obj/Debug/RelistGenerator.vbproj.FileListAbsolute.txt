@@ -68,3 +68,26 @@ Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\obj\Debug\RelistGene
 Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.pdb
 Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\bin\Debug\WHLClasses.dll.config
 Z:\Folders\Documents\GitHub\RelistGenerator\RelistGenerator\bin\Debug\MySql.Data.xml
+X:\IT\Remote Debugs\RelistGen\RelistGenerator.exe.config
+X:\IT\Remote Debugs\RelistGen\RelistGenerator.exe.manifest
+X:\IT\Remote Debugs\RelistGen\RelistGenerator.application
+X:\IT\Remote Debugs\RelistGen\RelistGenerator.exe
+X:\IT\Remote Debugs\RelistGen\RelistGenerator.pdb
+X:\IT\Remote Debugs\RelistGen\RelistGenerator.xml
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.vbprojAssemblyReference.cache
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\Relist.g.vb
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator_Content.g.vb
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator_MarkupCompile.cache
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator_MarkupCompile.lref
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\Relist.baml
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.g.resources
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.RelistMain.resources
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.Resources.resources
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.vbproj.GenerateResource.cache
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.vbproj.CoreCompileInputs.cache
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.exe.manifest
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.application
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.vbproj.CopyComplete
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.exe
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.xml
+C:\GIT C\RelistGenerator\RelistGenerator\obj\Debug\RelistGenerator.pdb
